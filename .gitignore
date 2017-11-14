@@ -23,3 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+bin/
+gradle/
+src/main/resources/static/htmTrash/datePicker/.gitignore

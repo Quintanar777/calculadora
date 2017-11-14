@@ -1,29 +1,21 @@
 package com.cetes.calculadora.calculadora.controller;
 
-import com.cetes.calculadora.calculadora.util.ReadFileCSVBuild;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController()
-@RequestMapping("calculadora")
+@Controller()
 public class CetesController {
 
-    @Autowired
-    private ReadFileCSVBuild readFileCSVBuild;
+    private static final Logger LOGGER = LoggerFactory.getLogger(CetesController.class);
+
     /**
-     * Leer archivo CVS
+     * Load cetes.html
      * */
-    @RequestMapping("cetes28")
-    @ResponseBody
-    public Object getValoresVCS(){
-        return readFileCSVBuild.readCSV("/opt/calc_cetes/docs/cetes_28.csv");
+    @RequestMapping("/cetes")
+    public String cetes(){
+        LOGGER.info("init - path: /cetes method: GET");
+        return "cetes";
     }
-
-
-    /**
-     * Realizar el calculo de cetes
-     * */
-
 }
