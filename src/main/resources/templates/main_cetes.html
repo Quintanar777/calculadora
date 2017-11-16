@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cetes</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        <h3 class="titulos-h3">Cetes</h3>
+
+        <form action="">
+          <div class="form-group">
+            <label for="monto" class="text">Monto: $</label>
+            <input class="input_text" type="text" id="monto" />
+          </div>
+          <div class="form-group">
+            <label for="plazo" class="text">Plazo:</label>
+            <input class="input_text" type="text" id="plazo" />
+          </div>
+          <div class="form-group">
+            <label for="invertir"></label>
+            <input type="checkbox" id="invertir"/>
+            <span class="text-blue">¿Quieres que se re-invertan aútomaticamente el capital y los rendimientos en cetes 28 días?</span>
+          </div>
+          <div class="form-group">
+            <p class="text" style="margin-top: 100px;">
+              ¿Prefieres comparar los plazos de Cetes?
+            </p>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn">Calcular</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Comparar</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-3" style="display: none;">
+        <h3 class="titulos-h3">Con los datos que seleccionaste tendrías:</h3>
+        <div class="row" style="margin-top: 18px;">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Inversión:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+        <div class="line-blue">________________________________________</div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Compraste en cetes:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Rendimiento bruto en cetes:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+        <div class="line-blue">________________________________________</div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Compraste en Bonddia:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Rendimiento bruto en Bonddia:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+        <div class="line-blue">________________________________________</div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Total invertido:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Total Rendimiento:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+        <div class="line-blue">________________________________________</div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">Tu remanente:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            ?
+          </div>
+          <div class="col-sm-5">
+            <span class="text">ISR retenido:</span>
+          </div>
+          <div class="col-sm-5 div-calc">
+            <span class="text">$ 1,000.00</span>
+          </div>
+        </div>
+        <div class="line-blue">________________________________________</div>
+
+      </div>
+      <div class="col-sm-7" style="display: none;">
+        <h3 class="titulos-h3">Ejemplo grafica de cetes a un año con ahorro recurrente</h3>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

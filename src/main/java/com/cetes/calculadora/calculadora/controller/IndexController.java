@@ -13,6 +13,6 @@ public class IndexController {
     @RequestMapping("/")
     public String index(){
         LOGGER.info("init - path: / method: GET");
-        return "inicial";
+        return "main_cetes";
     }
 }

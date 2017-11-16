@@ -1,0 +1,44 @@
+.titulos-h3{
+  color: #337AB6;
+  font-size: 15px;
+  margin-bottom: 70px;
+}
+
+.text{
+  color: #929292;
+  font-size: 12px;
+}
+
+.text-blue{
+  color: #337AB6;
+  font-size: 12px;
+}
+
+.input_text{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+.input_text_calc{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #337AB6;
+  color: #929292;
+  font-size: 12px;
+  width: 100%;
+}
+
+.div-calc{
+  padding-right: 6px;
+  text-align: right;
+}
+
+.line-blue{
+  margin-top: -4px;
+  color: #337AB6;
+  text-align: right;
+  margin-top: -15px;
+}
