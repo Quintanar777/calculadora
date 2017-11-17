@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cetes</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 </head>
 <body>
   <div class="container-fluid">
@@ -23,7 +23,7 @@
               <option value="28">28</option>
               <option value="91">91</option>
               <option value="182">182</option>
-              <option value="364">364</option>
+              <option value="360">360</option>
             </select>
           </div>
           <div class="form-group">
@@ -51,7 +51,7 @@
         <h3 class="titulos-h3">Con los datos que seleccionaste tendrías:</h3>
         <div class="row" style="margin-top: 18px;">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Inversión:</span>
@@ -64,7 +64,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Compraste en cetes:</span>
@@ -76,7 +76,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Rendimiento bruto en cetes:</span>
@@ -89,7 +89,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Compraste en Bonddia:</span>
@@ -101,7 +101,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Rendimiento bruto en Bonddia:</span>
@@ -114,7 +114,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Total invertido:</span>
@@ -126,7 +126,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Total Rendimiento:</span>
@@ -139,7 +139,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Tu remanente:</span>
@@ -151,7 +151,7 @@
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">ISR retenido:</span>
@@ -163,12 +163,16 @@
         <div class="line-blue">________________________________________</div>
 
       </div>
-      <div class="col-sm-7" style="display: none;">
+      <div class="col-sm-6" style="display: none;" id="div-chart">
         <h3 class="titulos-h3">Ejemplo grafica de cetes a un año con ahorro recurrente</h3>
+        <div class="row">
+          <div id="chart-cetes" style="width:100%; height:400px;"></div>
+        </div>
       </div>
     </div>
   </div>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/highcharts.js"></script>
   <script src="js/vue.js"></script>
   <script src="js/cetes.js"></script>
 </body>

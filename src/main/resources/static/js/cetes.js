@@ -24,6 +24,7 @@ var app = new Vue({
   methods: {
     calcular: function (event) {
       $('#div-result').show();
+      $('#div-chart').show();
 
       var monto = $('#monto').val();
       var plazo = $('#plazo').val();
@@ -37,10 +38,46 @@ var app = new Vue({
         result.rend_brutos = data.data.montoRealBonddia
         result.compro_bonddia = data.data.montoRealBonddia
         result.rend_brutos_bond = data.data.intBrutosBonddia
-        //result.total_invertido = data.data.montoRealBonddia
+        result.total_invertido = data.data.tinvertido
         result.total_rendimiento = data.data.totalRendimiento
         result.remanente = data.data.remanente
-        result.isr = data.data.isr  
+        result.isr = data.data.isr
+      });
+
+      //Cargar grafica
+      var myChart = Highcharts.chart('chart-cetes', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'CETES'
+        },
+        xAxis: {
+            categories: ['Periodo 1']
+        },
+        yAxis: {
+            title: {
+                text: 'Valores'
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                }
+            }
+        },
+        series: [{
+          name: 'Remanente',
+          data: [1000]
+        },
+        {
+          name: 'Remanente Bonddia',
+          data: [320]
+        }
+        ]
       });
     }
   }
