@@ -12,14 +12,19 @@
       <div class="col-sm-2">
         <h3 class="titulos-h3">Cetes</h3>
 
-        <form action="">
+        <form id="form-cetes">
           <div class="form-group">
             <label for="monto" class="text">Monto: $</label>
             <input class="input_text" type="text" id="monto" />
           </div>
           <div class="form-group">
             <label for="plazo" class="text">Plazo:</label>
-            <input class="input_text" type="text" id="plazo" />
+            <select name="plazo" id="plazo">
+              <option value="28">28</option>
+              <option value="91">91</option>
+              <option value="182">182</option>
+              <option value="364">364</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="invertir"></label>
@@ -32,14 +37,17 @@
             </p>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn">Calcular</button>
+            <!-- <button class="btn">Calcular</button> -->
+            <input type="button" class="btn" value="Calcular" v-on:click="calcular"/>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Comparar</button>
+            <input type="button" class="btn btn-primary" value="Comparar" />
           </div>
         </form>
       </div>
-      <div class="col-sm-3" style="display: none;">
+
+      <!-- DIV de los resultados-->
+      <div class="col-sm-3" style="display: none; margin-left: 30px;" id="div-result">
         <h3 class="titulos-h3">Con los datos que seleccionaste tendrías:</h3>
         <div class="row" style="margin-top: 18px;">
           <div class="col-sm-1">
@@ -49,20 +57,20 @@
             <span class="text">Inversión:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ inversion }}</span>
           </div>
         </div>
         <div class="line-blue">________________________________________</div>
 
         <div class="row">
           <div class="col-sm-1">
-            ?
+            <span class="glyphicon glyphicon-envelope"></span>
           </div>
           <div class="col-sm-5">
             <span class="text">Compraste en cetes:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ compr_cetes }}</span>
           </div>
         </div>
 
@@ -74,7 +82,7 @@
             <span class="text">Rendimiento bruto en cetes:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ rend_brutos }}</span>
           </div>
         </div>
         <div class="line-blue">________________________________________</div>
@@ -87,7 +95,7 @@
             <span class="text">Compraste en Bonddia:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ compro_bonddia }}</span>
           </div>
         </div>
 
@@ -99,7 +107,7 @@
             <span class="text">Rendimiento bruto en Bonddia:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ rend_brutos_bond }}</span>
           </div>
         </div>
         <div class="line-blue">________________________________________</div>
@@ -112,7 +120,7 @@
             <span class="text">Total invertido:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ total_invertido }}</span>
           </div>
         </div>
 
@@ -124,7 +132,7 @@
             <span class="text">Total Rendimiento:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ total_rendimiento }}</span>
           </div>
         </div>
         <div class="line-blue">________________________________________</div>
@@ -137,7 +145,7 @@
             <span class="text">Tu remanente:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ remanente }}</span>
           </div>
         </div>
 
@@ -149,7 +157,7 @@
             <span class="text">ISR retenido:</span>
           </div>
           <div class="col-sm-5 div-calc">
-            <span class="text">$ 1,000.00</span>
+            <span class="text">$ {{ isr }}</span>
           </div>
         </div>
         <div class="line-blue">________________________________________</div>
@@ -160,5 +168,8 @@
       </div>
     </div>
   </div>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/cetes.js"></script>
 </body>
 </html>

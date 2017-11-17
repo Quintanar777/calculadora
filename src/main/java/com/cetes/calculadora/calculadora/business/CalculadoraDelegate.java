@@ -25,7 +25,7 @@ public class CalculadoraDelegate {
      * Método para realizar el calculo de CETES
      * */
     public Cetes getCalcCetes(int plazo, double montoInvertir){
-        cetes.setMontoInvertir(montoInvertir);
+        cetes.setMontoInvertir(UtilCommon.roundDouble(montoInvertir,2));
 
         double precioXcete = UtilCommon.roundDouble(valorCetes/(1+(plazo*tasaCetes)/360),7);
         double titulos = UtilCommon.roundDouble(montoInvertir/precioXcete,7);
