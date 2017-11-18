@@ -28,7 +28,7 @@ var app = new Vue({
 
       var monto = $('#monto').val();
       var plazo = $('#plazo').val();
-      var url = '/calculadora/cetes?monto=' + monto + '&plazo=' + plazo
+      var url = '/calculadora/calculadora/cetes?monto=' + monto + '&plazo=' + plazo
 
       //Peticion ajax para obtener los calculos
       $.get(url, function(data, status){
