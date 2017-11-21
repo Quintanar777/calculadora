@@ -9,10 +9,10 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 public class CalculadoraApplication extends SpringBootServletInitializer {
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(CalculadoraApplication.class);
-	}
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//		return application.sources(CalculadoraApplication.class);
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(CalculadoraApplication.class, args);

@@ -10,16 +10,16 @@
 	}
 }
 
-//apply plugin: 'java'
-apply plugin: 'war'
+apply plugin: 'java'
+//apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
-war {
-    baseName = 'calculadora'
-    version =  '0.0.1'
-    archiveName 'calculadora.war'
-}
+//war {
+//    baseName = 'calculadora'
+//    version =  '0.0.1'
+//    archiveName 'calculadora.war'
+//}
 
 group = 'com.cetes.calculadora'
 version = '0.0.1-SNAPSHOT'
@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile('net.sf.opencsv:opencsv:2.3')
     compile('org.projectlombok:lombok')

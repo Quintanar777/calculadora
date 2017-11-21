@@ -27,7 +27,11 @@ public class CalculadoraDelegate {
     public Cetes getCalcCetes(int plazo, double montoInvertir){
         cetes.setMontoInvertir(UtilCommon.roundDouble(montoInvertir,2));
 
-        double precioXcete = UtilCommon.roundDouble(valorCetes/(1+(plazo*tasaCetes)/360),7);
+        double tasaCetesAux = UtilCommon.roundDouble(tasaCetes/100,7);
+        double tasaBonddiaAux = UtilCommon.roundDouble(tasaBonddia/100,7);
+
+        double precioXcete = UtilCommon.roundDouble(valorCetes/(1+(plazo*tasaCetesAux)/360),7);
+
         double titulos = UtilCommon.roundDouble(montoInvertir/precioXcete,7);
 
         long iPart = (long) titulos;
@@ -37,7 +41,7 @@ public class CalculadoraDelegate {
         cetes.setMontoRealCetes(UtilCommon.roundDouble(montoRealCetes, 2));
 
         double remanente = UtilCommon.roundDouble((montoInvertir - (iPart*precioXcete)),7);
-        double intBrutosCetes = UtilCommon.roundDouble(((tasaCetes*100)/36000)*plazo*montoRealCetes,7);
+        double intBrutosCetes = UtilCommon.roundDouble(((tasaCetesAux*100)/36000)*plazo*montoRealCetes,7);
 
         cetes.setIntBrutosCetes(UtilCommon.roundDouble(intBrutosCetes, 2));
 
@@ -49,7 +53,7 @@ public class CalculadoraDelegate {
         cetes.setMontoRealBonddia(UtilCommon.roundDouble(montoRealBonddia,2));
 
         double remanenteBonddia = UtilCommon.roundDouble((remanente - montoRealBonddia),7);
-        double intBrutosBonddia = UtilCommon.roundDouble((tasaBonddia*100/36000)*plazo*montoRealBonddia,7);
+        double intBrutosBonddia = UtilCommon.roundDouble((tasaBonddiaAux*100/36000)*plazo*montoRealBonddia,7);
         cetes.setIntBrutosBonddia(UtilCommon.roundDouble(intBrutosBonddia, 2));
 
         double tInvertido = UtilCommon.roundDouble((montoRealCetes+montoRealBonddia),2);
@@ -65,6 +69,9 @@ public class CalculadoraDelegate {
 
         double totalRendimiento = UtilCommon.roundDouble((tInvertido+tRendimiento-ISR),2);
         cetes.setTotalRendimiento(totalRendimiento);
+
+        double totalFinal = UtilCommon.roundDouble((tInvertido+tRendimiento-ISR),2);
+        cetes.setTotalFinal(totalFinal);
 
         return cetes;
     }

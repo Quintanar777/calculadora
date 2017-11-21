@@ -10,6 +10,12 @@
   font-size: 12px;
 }
 
+.text-bold{
+  color: #929292;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .text-blue{
   color: #337AB6;
   font-size: 12px;

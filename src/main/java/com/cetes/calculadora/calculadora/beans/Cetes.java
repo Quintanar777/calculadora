@@ -16,4 +16,5 @@ public class Cetes {
     private double remanente;
     private double isr;
     private double totalRendimiento;
+    private double totalFinal;
 }
