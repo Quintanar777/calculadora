@@ -9,13 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class CalculadoraDelegate {
 
-    @Value("${calc.cetes.cete}")
+    @Value("${calc.cetes.precio}")
     private Double valorCetes;
-    @Value("${calc.cetes.bonddia}")
+    @Value("${calc.bonddia.precio}")
     private Double valorBonddia;
+
     @Value("${calc.cetes.tasa}")
     private Double tasaCetes;
-    @Value("${calc.cetes.tasa.bonddia}")
+    @Value("${calc.bonddia.tasa}")
     private Double tasaBonddia;
     @Autowired
     private Cetes cetes;

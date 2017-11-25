@@ -16,16 +16,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("calculadora")
-public class CalculadorasController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CalculadorasController.class);
+@RequestMapping("cetes")
+public class CetesController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CetesController.class);
     @Autowired
     private CalculadoraDelegate calculadoraDelegate;
 
     /**
      * Rest GET para el calculo de CETES
      */
-    @RequestMapping(value = "cetes", method = RequestMethod.GET)
+    @RequestMapping(value = "invertir", method = RequestMethod.GET)
     @ResponseBody
     public ApiResponse cetes(
             @RequestParam(value = "plazo", required = true) Integer plazo,

@@ -5,7 +5,7 @@
     <title>Cetes</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/sliders.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/sliders.css" /> -->
 </head>
 <body>
   <div class="container-fluid">
@@ -34,10 +34,10 @@
           </div>
           <div class="form-group" id="div-reinvertir" style="display:none;">
             <div id="slidecontainer">
-              <input type="range" min="28" max="365" value="1" class="slider" id="myRange" />
-              <p class="text">Inicia: {{ fechaActual }}</p>
-              <p class="text">Tiempo de inversión: <span id="dias-inversion" class="text-bold"></span> dias.</p>
+              <input type="range" min="28" max="365" value="1" id="myRange" />
             </div>
+            <p class="text">Inicia: {{ fechaActual }}</p>
+            <p class="text">Tiempo de inversión: <span id="dias-inversion" class="text-bold"></span> dias.</p>
           </div>
           <div class="form-group">
             <p class="text" style="margin-top: 100px;">
@@ -178,7 +178,7 @@
 
       </div>
       <div class="col-sm-6" style="display: none;" id="div-chart">
-        <h3 class="titulos-h3">Ejemplo grafica de cetes a un año con ahorro recurrente</h3>
+        <h3 class="titulos-h3">Grafica Reinversión</h3>
         <div class="row">
           <div id="chart-cetes" style="width:100%; height:400px;"></div>
         </div>

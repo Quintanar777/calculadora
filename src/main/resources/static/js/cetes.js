@@ -16,11 +16,15 @@ var result = new Vue({
 })
 var today = new Date();
 
+var day = today.getDate();
+var month = today.getMonth();
+var year = today.getFullYear();
+
 //Formulario
 var app = new Vue({
   el: '#form-cetes',
   data: {
-    fechaActual: today.toLocaleFormat('%d/%b/%Y'),
+    fechaActual: day + '/' + month + '/' + year,
     checked: false
   },
   methods: {
@@ -58,7 +62,7 @@ var app = new Vue({
 * Funcion para obtener los calculos de n plazos
 */
 function calcularPeriodos(periodo, montoInicial) {
-  var url = '/calculadora/re_invertir?periodo=' + periodo + '&montoInicial=' + montoInicial
+  var url = '/calculadoras/cetes/re_invertir?periodo=' + periodo + '&montoInicial=' + montoInicial
 
   //Peticion ajax para obtener los calculos
   $.get(url, function(data, status){
@@ -83,7 +87,7 @@ function calcularPeriodos(periodo, montoInicial) {
 * Funcion para realizar los calculos en base al monto y plazos
 */
 function calcularCetes(monto, plazo){
-  var url = '/calculadora/cetes?monto=' + monto + '&plazo=' + plazo
+  var url = '/calculadoras/cetes/invertir?monto=' + monto + '&plazo=' + plazo
 
   //Peticion ajax para obtener los calculos
   $.get(url, function(data, status){
