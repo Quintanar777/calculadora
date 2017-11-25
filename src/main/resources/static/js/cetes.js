@@ -1,19 +1,3 @@
-//div de resultados
-var result = new Vue({
-  el: '#div-result',
-  data: {
-    inversion: '0.00',
-    compr_cetes: '0.00',
-    rend_brutos: '0.00',
-    compro_bonddia: '0.00',
-    rend_brutos_bond: '0.00',
-    total_invertido: '0.00',
-    total_rendimiento: '0.00',
-    remanente: '0.00',
-    isr: '0.00',
-    montoFinal: '0.0'
-  }
-})
 var today = new Date();
 
 var day = today.getDate();
@@ -30,21 +14,24 @@ var app = new Vue({
   methods: {
     //evento click para el boton Calcular
     calcular: function (event) {
-      $('#div-result').show();
-      $('#div-chart').show();
-      var monto = $('#monto').val();
-      var plazo = $('#plazo').val();
+      //mostrar en el div de contenido, el html de calc_cetes.html
+      $('#content').load('/calculadoras/calc_cetes', function () {
+        $('#div-result').show();
+        $('#div-chart').show();
+        var monto = $('#monto').val();
+        var plazo = $('#plazo').val();
 
-      if(this.checked){ //calculo a n peridos
-        //calcular peridos
-        var slider = document.getElementById("myRange");
-        var periodos = Math.round(slider.value / 28);
-        console.log(periodos);
-        calcularPeriodos(periodos, monto);
-      }else{ //calculo al plazo seleccionado
-        calcularCetes(monto, plazo);
-      }
+        if(this.checked){ //calculo a n peridos
+          //calcular peridos
+          var slider = document.getElementById("myRange");
+          var periodos = Math.round(slider.value / 28);
+          console.log(periodos);
+          calcularPeriodos(periodos, monto);
+        }else{ //calculo al plazo seleccionado
+          calcularCetes(monto, plazo);
+        }
 
+      });
 
     },
     checkInvertir: function (event){
