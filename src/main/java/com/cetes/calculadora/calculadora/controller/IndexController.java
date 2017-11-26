@@ -23,4 +23,12 @@ public class IndexController {
     public String getCalcCetes(){
         return "cetes/calc_cetes";
     }
+
+    /**
+     * get cetes/comp_cetes.html
+     * */
+    @RequestMapping("/comp_cetes")
+    public String getCalcComparar(){
+        return "cetes/comp_cetes";
+    }
 }

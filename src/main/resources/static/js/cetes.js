@@ -41,6 +41,11 @@ var app = new Vue({
       }else{
         $('#div-reinvertir').hide();
       }
+    },
+    comparar: function (event) {
+      $('#content').load('/calculadoras/comp_cetes', function () {
+
+      });
     }
   }
 })
