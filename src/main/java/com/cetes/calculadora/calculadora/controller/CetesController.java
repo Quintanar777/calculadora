@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("cetes")
@@ -53,7 +55,7 @@ public class CetesController {
             @RequestParam(value = "periodo", required = true) Integer periodo,
             @RequestParam(value = "montoInicial", required = true) Double montoInicial
     ) {
-        LOGGER.info("init - path: calculadora/re_invertir method: GET");
+        LOGGER.info("init - path: /re_invertir method: GET");
         LOGGER.debug("periodo: " + periodo);
         LOGGER.debug("montoInicial: " + montoInicial);
 
@@ -103,7 +105,33 @@ public class CetesController {
                     new ApiError(500, "Ocurrio un error al realizar el calculo de re invertir")
             );
         }
+    }
 
+    /**
+     * RM para obtener los calculos para comparar
+     * */
+    @RequestMapping(value = "comparar", method = RequestMethod.GET)
+    public ApiResponse compararCetes(@RequestParam(value = "monto") Double monto){
+        LOGGER.info("init - path: /comparar method: GET");
+        LOGGER.debug("monto: " + monto);
 
+        try{
+            Map<String, Object> responseComp = new HashMap<>();
+            //28 dias
+            responseComp.put("comp28", calculadoraDelegate.getCalcCetes(28, monto));
+            //91 dias
+            responseComp.put("comp91", calculadoraDelegate.getCalcCetes(91, monto));
+            //182 dias
+            responseComp.put("comp182", calculadoraDelegate.getCalcCetes(182, monto));
+            //364 dias
+            responseComp.put("comp364", calculadoraDelegate.getCalcCetes(364, monto));
+
+            return new ApiResponse(Status.OK, responseComp);
+        }catch (Exception e){
+            LOGGER.error("error - Ocurrio un error: " + e.getMessage());
+            return new ApiResponse(Status.ERROR,
+                    new ApiError(500, "Ocurrio un error al realizar la comparacion por plazos")
+            );
+        }
     }
 }

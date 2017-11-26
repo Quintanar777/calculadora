@@ -1,0 +1,48 @@
+var compResult = new Vue({
+  el: '#div-comp',
+  data:{
+    inversion28: '0.00',
+    compr_cetes28: '0.00',
+    rend_brutos28: '0.00',
+    compro_bonddia28: '0.00',
+    rend_brutos_bond28: '0.00',
+    total_invertido28: '0.00',
+    total_rendimiento28: '0.00',
+    remanente28: '0.00',
+    isr28: '0.00',
+    montoFinal28: '0.0',
+
+    inversion91: '0.00',
+    compr_cetes91: '0.00',
+    rend_brutos91: '0.00',
+    compro_bonddia91: '0.00',
+    rend_brutos_bond91: '0.00',
+    total_invertido91: '0.00',
+    total_rendimiento91: '0.00',
+    remanente91: '0.00',
+    isr91: '0.00',
+    montoFinal91: '0.0',
+
+    inversion182: '0.00',
+    compr_cetes182: '0.00',
+    rend_brutos182: '0.00',
+    compro_bonddia182: '0.00',
+    rend_brutos_bond182: '0.00',
+    total_invertido182: '0.00',
+    total_rendimiento182: '0.00',
+    remanente182: '0.00',
+    isr182: '0.00',
+    montoFinal182: '0.0',
+
+    inversion364: '0.00',
+    compr_cetes364: '0.00',
+    rend_brutos364: '0.00',
+    compro_bonddia364: '0.00',
+    rend_brutos_bond364: '0.00',
+    total_invertido364: '0.00',
+    total_rendimiento364: '0.00',
+    remanente364: '0.00',
+    isr364: '0.00',
+    montoFinal364: '0.0'
+  }
+})

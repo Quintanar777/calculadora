@@ -2,12 +2,15 @@ package com.cetes.calculadora.calculadora.business;
 
 import com.cetes.calculadora.calculadora.beans.Cetes;
 import com.cetes.calculadora.calculadora.util.UtilCommon;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CalculadoraDelegate {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CalculadoraDelegate.class);
 
     @Value("${calc.cetes.precio}")
     private Double valorCetes;
@@ -18,14 +21,15 @@ public class CalculadoraDelegate {
     private Double tasaCetes;
     @Value("${calc.bonddia.tasa}")
     private Double tasaBonddia;
-    @Autowired
-    private Cetes cetes;
 
 
     /**
      * Método para realizar el calculo de CETES
      * */
     public Cetes getCalcCetes(int plazo, double montoInvertir){
+        LOGGER.info("exec getCalcCetes()");
+        Cetes cetes = new Cetes();
+
         cetes.setMontoInvertir(UtilCommon.roundDouble(montoInvertir,2));
 
         double tasaCetesAux = UtilCommon.roundDouble(tasaCetes/100,7);

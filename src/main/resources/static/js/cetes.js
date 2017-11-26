@@ -44,7 +44,60 @@ var app = new Vue({
     },
     comparar: function (event) {
       $('#content').load('/calculadoras/comp_cetes', function () {
+        var monto = $('#monto').val();
 
+        var url = '/calculadoras/cetes/comparar?monto=' + monto
+
+        //Peticion ajax para obtener los calculos
+        $.get(url, function(data, status){
+          compResult.inversion28 = data.data.comp28.montoInvertir
+          compResult.compr_cetes28 = data.data.comp28.montoRealCetes
+          compResult.rend_brutos28 = data.data.comp28.intBrutosCetes
+          compResult.rend_brutos28 = data.data.comp28.montoRealBonddia
+          compResult.compro_bonddia28 = data.data.comp28.montoRealBonddia
+          compResult.rend_brutos_bond28 = data.data.comp28.intBrutosBonddia
+          compResult.total_invertido28 = data.data.comp28.tinvertido
+          compResult.total_rendimiento28 = data.data.comp28.totalRendimiento
+          compResult.remanente28 = data.data.comp28.remanente
+          compResult.isr28 = data.data.comp28.isr
+          compResult.montoFinal28 = data.data.comp28.totalFinal
+
+          compResult.inversion91 = data.data.comp91.montoInvertir
+          compResult.compr_cetes91 = data.data.comp91.montoRealCetes
+          compResult.rend_brutos91 = data.data.comp91.intBrutosCetes
+          compResult.rend_brutos91 = data.data.comp91.montoRealBonddia
+          compResult.compro_bonddia91 = data.data.comp91.montoRealBonddia
+          compResult.rend_brutos_bond91 = data.data.comp91.intBrutosBonddia
+          compResult.total_invertido91 = data.data.comp91.tinvertido
+          compResult.total_rendimiento91 = data.data.comp91.totalRendimiento
+          compResult.remanente91 = data.data.comp91.remanente
+          compResult.isr91 = data.data.comp91.isr
+          compResult.montoFinal91 = data.data.comp91.totalFinal
+
+          compResult.inversion182 = data.data.comp182.montoInvertir
+          compResult.compr_cetes182 = data.data.comp182.montoRealCetes
+          compResult.rend_brutos182 = data.data.comp182.intBrutosCetes
+          compResult.rend_brutos182 = data.data.comp182.montoRealBonddia
+          compResult.compro_bonddia182 = data.data.comp182.montoRealBonddia
+          compResult.rend_brutos_bond182 = data.data.comp182.intBrutosBonddia
+          compResult.total_invertido182 = data.data.comp182.tinvertido
+          compResult.total_rendimiento182 = data.data.comp182.totalRendimiento
+          compResult.remanente182 = data.data.comp182.remanente
+          compResult.isr182 = data.data.comp182.isr
+          compResult.montoFinal182 = data.data.comp182.totalFinal
+
+          compResult.inversion364 = data.data.comp364.montoInvertir
+          compResult.compr_cetes364 = data.data.comp364.montoRealCetes
+          compResult.rend_brutos364 = data.data.comp364.intBrutosCetes
+          compResult.rend_brutos364 = data.data.comp364.montoRealBonddia
+          compResult.compro_bonddia364 = data.data.comp364.montoRealBonddia
+          compResult.rend_brutos_bond364 = data.data.comp364.intBrutosBonddia
+          compResult.total_invertido364 = data.data.comp364.tinvertido
+          compResult.total_rendimiento364 = data.data.comp364.totalRendimiento
+          compResult.remanente364 = data.data.comp364.remanente
+          compResult.isr364 = data.data.comp364.isr
+          compResult.montoFinal364 = data.data.comp364.totalFinal
+        });
       });
     }
   }
