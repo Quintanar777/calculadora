@@ -27,12 +27,12 @@ var app = new Vue({
           $('#div-chart').show();
 
           var plazo = $('#plazo').val();
-
-          if(this.checked){ //calculo a n peridos
+          console.log('invertir? ' + $("#invertir").is(':checked'));
+          if($("#invertir").is(':checked')){ //calculo a n peridos
             //calcular peridos
             var slider = document.getElementById("myRange");
             var periodos = Math.round(slider.value / 28);
-            console.log(periodos);
+            console.log('peridos: ' + periodos);
             calcularPeriodos(periodos, monto);
           }else{ //calculo al plazo seleccionado
             calcularCetes(monto, plazo);
@@ -247,8 +247,6 @@ slider.oninput = function() {
 * Validar campos
 */
 function validarCampos(monto) {
-  console.log(monto < 100 || monto > 10000);
-  console.log(monto == '');
   if(monto == ''){
     $('#errorMonto').show();
     $('#monto').addClass('input_text_error');
