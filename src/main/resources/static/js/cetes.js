@@ -14,25 +14,32 @@ var app = new Vue({
   methods: {
     //evento click para el boton Calcular
     calcular: function (event) {
-      //mostrar en el div de contenido, el html de calc_cetes.html
-      $('#content').load('/calculadoras/calc_cetes', function () {
-        $('#div-result').show();
-        $('#div-chart').show();
-        var monto = $('#monto').val();
-        var plazo = $('#plazo').val();
+      //validar campos
+      var monto = $('#monto').val();
+      if(validarCampos(monto)){
+        $('#errorMonto').hide();
+        $('#monto').addClass('input_text');
+        $('#monto').removeClass('input_text_error');
 
-        if(this.checked){ //calculo a n peridos
-          //calcular peridos
-          var slider = document.getElementById("myRange");
-          var periodos = Math.round(slider.value / 28);
-          console.log(periodos);
-          calcularPeriodos(periodos, monto);
-        }else{ //calculo al plazo seleccionado
-          calcularCetes(monto, plazo);
-        }
+        //mostrar en el div de contenido, el html de calc_cetes.html
+        $('#content').load('/calculadoras/calc_cetes', function () {
+          $('#div-result').show();
+          $('#div-chart').show();
 
-      });
+          var plazo = $('#plazo').val();
 
+          if(this.checked){ //calculo a n peridos
+            //calcular peridos
+            var slider = document.getElementById("myRange");
+            var periodos = Math.round(slider.value / 28);
+            console.log(periodos);
+            calcularPeriodos(periodos, monto);
+          }else{ //calculo al plazo seleccionado
+            calcularCetes(monto, plazo);
+          }
+
+        });
+      }
     },
     checkInvertir: function (event){
       //Mostrar reinvertir
@@ -233,4 +240,27 @@ output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
+}
+
+
+/**
+* Validar campos
+*/
+function validarCampos(monto) {
+  console.log(monto < 100 || monto > 10000);
+  console.log(monto == '');
+  if(monto == ''){
+    $('#errorMonto').show();
+    $('#monto').addClass('input_text_error');
+    $('#monto').removeClass('input_text');
+    $('#errorMonto').html('* Este campo es obligatorio.');
+    return false;
+  } else if (monto < 100 || monto > 10000){
+    $('#errorMonto').show();
+    $('#monto').addClass('input_text_error');
+    $('#monto').removeClass('input_text');
+    $('#errorMonto').html('* El monto debe ser ente 100 y 10,000.');
+    return false;
+  }
+  return true;
 }

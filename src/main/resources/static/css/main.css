@@ -28,6 +28,13 @@
   border-bottom: 1px solid black;
 }
 
+.input_text_error{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid red;
+}
+
 .input_text_calc{
   border: 0;
   outline: 0;
@@ -74,4 +81,10 @@
   color: white;
   font-weight: bold;
   text-align: center;
+}
+
+
+.error{
+  color: red;
+  font-size: 9px;
 }
