@@ -8,9 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.web.WebApplicationInitializer;
 
 @SpringBootApplication
-public class CalculadoraApplication extends SpringBootServletInitializer {
+public class CalculadoraApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CalculadoraApplication.class, args);
