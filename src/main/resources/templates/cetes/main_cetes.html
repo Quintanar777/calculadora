@@ -3,13 +3,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cetes</title>
-    <link rel="stylesheet" type="text/css" href="calculadoras/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="calculadoras/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3" style="padding-top: 20px; padding-left: 50px">
         <h3 class="titulos-h3">Cetes</h3>
 
         <form id="form-cetes">
@@ -20,12 +20,15 @@
           </div>
           <div class="form-group">
             <label for="plazo" class="text">Plazo:</label>
-            <select name="plazo" id="plazo">
+            <select name="plazo" id="plazo" class="select-plazo">
               <option value="28">28</option>
               <option value="91">91</option>
               <option value="182">182</option>
               <option value="360">360</option>
             </select>
+          </div>
+          <div class="form-group" style="text-align: center;">
+            <input type="button" class="boton-default btn" style="font-weight: bold;" value="Calcular" v-on:click="calcular"/>
           </div>
           <div class="form-group">
             <label for="invertir"></label>
@@ -40,25 +43,22 @@
             <p class="text">Tiempo de inversión: <span id="dias-inversion" class="text-bold"></span> dias.</p>
           </div>
           <div class="form-group">
-            <p class="text" style="margin-top: 100px;">
+            <p class="text-blue" style="margin-top: 100px;">
               ¿Prefieres comparar los plazos de Cetes?
             </p>
           </div>
-          <div class="form-group">
-            <!-- <button class="btn">Calcular</button> -->
-            <input type="button" class="btn" value="Calcular" v-on:click="calcular"/>
-          </div>
-          <div class="form-group">
-            <input type="button" class="btn btn-primary" value="Comparar" v-on:click="comparar" />
+
+          <div class="form-group" style="text-align: center;">
+            <input style="font-weight: bold;" type="button" class="btn btn-primary" value="Comparar" v-on:click="comparar" />
           </div>
         </form>
       </div>
-      <div class="col-sm-10" id="content">
+      <div class="col-sm-9" id="content" style="padding-top: 20px;">
       </div>
     </div>
   </div>
-  <script src="calculadoras/js/jquery-3.2.1.min.js"></script>
-  <script src="calculadoras/js/vue.js"></script>
-  <script src="calculadoras/js/cetes.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/cetes.js"></script>
 </body>
 </html>
