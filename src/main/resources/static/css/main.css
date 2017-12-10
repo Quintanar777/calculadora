@@ -1,3 +1,8 @@
+@font-face {
+    font-family: fontCetes;
+    src: url("fonts/WorkSans-Regular.ttf") format('truetype');
+}
+
 .titulos-h3{
   color: #337AB6;
   font-size: 15px;
@@ -6,19 +11,25 @@
 }
 
 .text{
-  color: #929292;
+  color: #919191;
   font-size: 12px;
 }
 
 .text-bold{
-  color: #929292;
+  color: #919191;
   font-size: 12px;
   font-weight: bold;
 }
 
 .text-blue{
-  color: #337AB6;
+  color: #1C83C6;
   font-size: 12px;
+}
+
+.text-blue-bold{
+  color: #1C83C6;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .input_text{
@@ -43,7 +54,7 @@
   outline: 0;
   background: transparent;
   border-bottom: 1px solid #337AB6;
-  color: #929292;
+  color: #1C83C6;
   font-size: 12px;
   width: 100%;
 }
@@ -63,8 +74,9 @@
 .line{
   width: 100%;
   height: 10px;
-  border-bottom: 1px solid #337AB6;
-  position: absolute;
+  border-bottom: 2px solid #337AB6;
+  position: inherit;
+  margin-bottom: 15px;
 }
 
 .compare-blue{
@@ -105,4 +117,46 @@
 .boton-default{
   background-color: #a5a5a5;
   color: white;
+}
+
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 80px;
+      -webkit-appearance: none;
+      background-color: #1C83C6;
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: #1C83C6;
+      margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: #1C83C6;
+      box-shadow: -80px 0 0 80px #1C83C6;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #1C83C6;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #1C83C6;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #1C83C6;
+}
+input[type="range"]::-ms-fill-upper {
+  background-color: #1C83C6;
 }

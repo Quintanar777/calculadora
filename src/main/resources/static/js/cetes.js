@@ -253,11 +253,11 @@ function validarCampos(monto) {
     $('#monto').removeClass('input_text');
     $('#errorMonto').html('* Este campo es obligatorio.');
     return false;
-  } else if (monto < 100 || monto > 10000){
+  } else if (monto < 100 || monto > 1000000){
     $('#errorMonto').show();
     $('#monto').addClass('input_text_error');
     $('#monto').removeClass('input_text');
-    $('#errorMonto').html('* El monto debe ser ente 100 y 10,000.');
+    $('#errorMonto').html('* El monto debe ser ente 100 y 1,000,000.');
     return false;
   }
   return true;
