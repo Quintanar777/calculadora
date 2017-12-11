@@ -10,89 +10,198 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3" style="display: none; padding-top: 20px;" id="div-result">
+
+          <!-- calcular un periodo -->
           <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4">
-              <span class="text">Titulos</span>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-4">
+                <span class="text">Titulos</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text">Tasa Bruta</span>
+              </div>
             </div>
-            <div class="col-sm-5">
-              <span class="text">Tasa Bruta</span>
+            <div class="row">
+              <div class="col-sm-3">
+                <span class="text pull-right">Cetes:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">103</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text-blue-bold pull-right">5.6%</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <span class="text pull-right">Bonddia:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">103</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text-blue-bold pull-right">12%</span>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Inversión cetes:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Inversión bonddia:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Interes bruto:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">ISR:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Monto total:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
             </div>
           </div>
+
           <div class="row">
-            <div class="col-sm-3">
-              <span class="text pull-right">Cetes:</span>
+            <p class="text-blue" style="padding-top: 35px; padding-bottom: 20px;">Con Reinversión automatica</p>
+          </div>
+
+          <!-- calcular n periodos -->
+          <div class="row" id="div-result-periodos" style="display: none;">
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-4">
+                <span class="text">Titulos</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text">Tasa Bruta</span>
+              </div>
             </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">103</span>
+            <div class="row">
+              <div class="col-sm-3">
+                <span class="text pull-right">Cetes:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">103</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text-blue-bold pull-right">5.6%</span>
+              </div>
             </div>
-            <div class="col-sm-5">
-              <span class="text-blue-bold pull-right">5.6%</span>
+            <div class="row">
+              <div class="col-sm-3">
+                <span class="text pull-right">Bonddia:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">103</span>
+              </div>
+              <div class="col-sm-5">
+                <span class="text-blue-bold pull-right">12%</span>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Inversión cetes:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Inversión bonddia:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Interes bruto:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">ISR:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-bold pull-right">$ 1521</span>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
+                <span class="text pull-right">Monto total:</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="text-blue-bold pull-right">$ 1521</span>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-3">
-              <span class="text pull-right">Bonddia:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">103</span>
-            </div>
-            <div class="col-sm-5">
-              <span class="text-blue-bold pull-right">12%</span>
-            </div>
-          </div>
-          <div class="line"></div>
-          <div class="row">
-            <div class="col-sm-8">
-              <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
-              <span class="text pull-right">Inversión cetes:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">$ 1521</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-              <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
-              <span class="text pull-right">Inversión bonddia:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">$ 1521</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-              <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
-              <span class="text pull-right">Interes bruto:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">$ 1521</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-              <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
-              <span class="text pull-right">ISR:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-bold pull-right">$ 1521</span>
-            </div>
-          </div>
-          <div class="line"></div>
-          <div class="row">
-            <div class="col-sm-8">
-              <span class="glyphicon glyphicon-question-sign" style="color:#337AB6;"></span>
-              <span class="text pull-right">Monto total:</span>
-            </div>
-            <div class="col-sm-4">
-              <span class="text-blue-bold pull-right">$ 1521</span>
-            </div>
+
+
+          <div class="form-group" style="text-align: center;">
+            <input id="button-graficar" style="font-weight: bold; margin-top: 190px;" type="button" class="btn btn-primary" value="Graficar" v-on:click="show_grafica" />
           </div>
         </div>
         <div class="col-sm-8" style="display: none;" id="div-chart">
-          <h3 class="titulos-h3">Grafica Reinversión</h3>
           <div class="row">
-            <div id="chart-cetes" style="width:100%; height:400px;"></div>
+            <div id="chart-cetes" style="height:400px;"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+              <p class="text">Tasa Bruta: Es la tasa de rendimiento promedio ponderada publicada en la ultima subasta por Banco de México</p>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-4">
+              <div class="row">
+                <span class="text-blue">Obtienes al final: </span>123123
+              </div>
+              <div class="row">
+                <span class="text-blue">Tasa ponderada: </span>7.18
+              </div>
+            </div>
           </div>
         </div>
       </div>

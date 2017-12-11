@@ -1,6 +1,6 @@
 @font-face {
     font-family: fontCetes;
-    src: url("fonts/WorkSans-Regular.ttf") format('truetype');
+    src: url("../fonts/WorkSans-Regular.ttf") format('truetype');
 }
 
 .titulos-h3{

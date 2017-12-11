@@ -18,13 +18,10 @@ var app = new Vue({
       var monto = $('#monto').val();
       if(validarCampos(monto)){
         $('#errorMonto').hide();
-        $('#monto').addClass('input_text');
-        $('#monto').removeClass('input_text_error');
 
         //mostrar en el div de contenido, el html de calc_cetes.html
         $('#content').load('/calculadoras/calc_cetes', function () {
           $('#div-result').show();
-          $('#div-chart').show();
 
           var plazo = $('#plazo').val();
           console.log('invertir? ' + $("#invertir").is(':checked'));
@@ -132,7 +129,9 @@ function calcularPeriodos(periodo, montoInicial) {
 
     graficarPeriodos(data.data.listRendimientos, data.data.namesPeriodos);
   });
-
+  $('#div-result-periodos').show();
+  //margin-top: 145px;
+  $('#button-graficar').css('margin-top','60px');
 }
 
 /**

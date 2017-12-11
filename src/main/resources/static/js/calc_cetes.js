@@ -12,5 +12,10 @@ var result = new Vue({
     remanente: '0.00',
     isr: '0.00',
     montoFinal: '0.0'
+  },
+  methods: {
+    show_grafica: function(event) {
+      $('#div-chart').show();
+    }
   }
 })
